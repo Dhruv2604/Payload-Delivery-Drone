@@ -1,2 +1,16 @@
-# Payload-Delivery-Drone
-Designed and developed a drone capable of secure payload delivery using facial recognition authentication. Implemented Raspberry Pi with OpenCV for real-time face detection and verification. Integrated recognition algorithms with payload mechanism for authorized package release. Optimized hardware-software coordination for stable and operation.
+# Facial Recognition Delivery Drone
+
+An AI-powered autonomous delivery drone using OpenCV facial recognition, Raspberry Pi, and Pixhawk autopilot for secure payload delivery.
+
+## Features
+- Real-time facial recognition
+- Secure payload release
+- Object avoidance
+- Raspberry Pi integration
+- Pixhawk flight control
+
+## Technologies
+Python, OpenCV, Raspberry Pi, DroneKit, Pixhawk, Computer Vision
+
+## Author
+Dhruv Aryaman
