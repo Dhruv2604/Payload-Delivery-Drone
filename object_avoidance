@@ -1,0 +1,39 @@
+import time
+import RPi.GPIO as GPIO
+
+TRIG = 23
+ECHO = 24
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(TRIG, GPIO.OUT)
+GPIO.setup(ECHO, GPIO.IN)
+
+
+def distance():
+
+    GPIO.output(TRIG, True)
+    time.sleep(0.00001)
+    GPIO.output(TRIG, False)
+
+    while GPIO.input(ECHO) == 0:
+        pulse_start = time.time()
+
+    while GPIO.input(ECHO) == 1:
+        pulse_end = time.time()
+
+    pulse_duration = pulse_end - pulse_start
+
+    dist = pulse_duration * 17150
+
+    return round(dist, 2)
+
+while True:
+
+    dist = distance()
+
+    print(f'Distance: {dist} cm')
+
+    if dist < 50:
+        print('Obstacle Detected! Avoiding...')
+
+    time.sleep(1)
